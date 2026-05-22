@@ -1,0 +1,16 @@
+$kind: http-request
+name: New Request
+url: "{{base_url}}/api/caesar/encrypt"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"plain_text\": \"Nhat Anh\",\r
+
+    \    \"key\": \"1\"\r
+
+    }"
+order: 1779416590046
