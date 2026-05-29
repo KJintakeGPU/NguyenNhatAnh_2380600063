@@ -1,6 +1,6 @@
 class VigenereCipher:
-    def __init__(self, key):
-        self
+    def __init__(self):
+        pass
 
     def encrypt(self, plain_text, key):
         encrypt_text = ""
@@ -10,7 +10,7 @@ class VigenereCipher:
                 shift = ord(key[key_index % len(key)].upper()) - ord('A')
                 if char.isupper():
                     encrypt_text += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
-                else
+                else:
                     encrypt_text += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
                 key_index += 1
             else:
