@@ -1,0 +1,73 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+import os
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(476, 430)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.lbl_title = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_title.setGeometry(QtCore.QRect(110, 20, 250, 31))
+        self.lbl_title.setAlignment(QtCore.Qt.AlignCenter)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbl_title.setFont(font)
+        self.lbl_title.setObjectName("lbl_title")
+        self.txt_plain_text = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.txt_plain_text.setGeometry(QtCore.QRect(80, 80, 381, 91))
+        self.txt_plain_text.setObjectName("txt_plain_text")
+        self.lbl_plaintext = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_plaintext.setGeometry(QtCore.QRect(10, 80, 65, 21))
+        self.lbl_plaintext.setObjectName("lbl_plaintext")
+        self.lbl_key = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_key.setGeometry(QtCore.QRect(10, 200, 65, 21))
+        self.lbl_key.setObjectName("lbl_key")
+        self.txt_key = QtWidgets.QLineEdit(self.centralwidget)
+        self.txt_key.setGeometry(QtCore.QRect(80, 190, 381, 31))
+        self.txt_key.setObjectName("txt_key")
+        self.lbl_ciphertext = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_ciphertext.setGeometry(QtCore.QRect(10, 260, 65, 21))
+        self.lbl_ciphertext.setObjectName("lbl_ciphertext")
+        self.txt_cipher_text = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.txt_cipher_text.setGeometry(QtCore.QRect(80, 260, 381, 91))
+        self.txt_cipher_text.setObjectName("txt_cipher_text")
+        self.btn_encrypt = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_encrypt.setGeometry(QtCore.QRect(80, 360, 75, 23))
+        self.btn_encrypt.setObjectName("btn_encrypt")
+        self.btn_decrypt = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_decrypt.setGeometry(QtCore.QRect(380, 360, 75, 23))
+        self.btn_decrypt.setObjectName("btn_decrypt")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 476, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.lbl_title.setText(_translate("MainWindow", "CAESAR CIPHER"))
+        self.lbl_plaintext.setText(_translate("MainWindow", "Plaintext"))
+        self.lbl_key.setText(_translate("MainWindow", "Key"))
+        self.lbl_ciphertext.setText(_translate("MainWindow", "Ciphertext"))
+        self.btn_encrypt.setText(_translate("MainWindow", "Encrypt"))
+        self.btn_decrypt.setText(_translate("MainWindow", "Decrypt"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
