@@ -1,11 +1,36 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from cipher.caesar import CaesarCipher
 from cipher.vigenere import VigenereCipher
 from cipher.railfence import RailFenceCipher
 from cipher.playfair import PlayFairCipher
 from cipher.transposition import TranspositionCipher
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../templates")
+
+@app.route("/", methods=["GET"])
+def home():
+    """Render the main index page."""
+    return render_template("index.html")
+
+@app.route("/caesar", methods=["GET"])
+def caesar_page():
+    return render_template("caesar.html")
+
+@app.route("/vigenere", methods=["GET"])
+def vigenere_page():
+    return render_template("vigenere.html")
+
+@app.route("/playfair", methods=["GET"])
+def playfair_page():
+    return render_template("playfair.html")
+
+@app.route("/railfence", methods=["GET"])
+def railfence_page():
+    return render_template("railfence.html")
+
+@app.route("/transposition", methods=["GET"])
+def transposition_page():
+    return render_template("transposition.html")
 
 vigenere_Cipher = VigenereCipher()
 railfence_cipher = RailFenceCipher()
