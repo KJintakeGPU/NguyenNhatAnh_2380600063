@@ -1,2 +1,3 @@
 pyQt5
 Flask>=2.3.2
+rsa>=4.9
