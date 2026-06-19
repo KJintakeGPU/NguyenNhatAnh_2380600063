@@ -1,0 +1,27 @@
+# Bỏ qua môi trường ảo (Virtual Environment) nếu bạn tạo
+venv/
+env/
+.venv/
+.idea/
+.vscode/
+
+# Bỏ qua các file liên quan đến package Python
+# (Tránh push thư mục chứa thư viện cài đặt)
+*.egg-info/
+dist/
+build/
+
+# Bỏ qua file ảnh kết quả đã giấu tin (trong img-hidden)
+# Vì nó được tạo ra từ encrypt.py, không cần thiết phải commit file ảnh kết quả này
+lab_05/img-hidden/encoded_image.png
+
+# Bỏ qua các file chứng chỉ SSL (.crt, .key) trong ssl/certificates
+# *Lưu ý*: Rất khuyến khích bỏ qua file key riêng tư.
+# Nếu bạn có file .cnf, .txt ở đó để hướng dẫn tạo cert, bạn có thể giữ lại, nhưng 2 file dưới đây nên bỏ qua:
+lab_05/ssl/certificates/server-cert.crt
+lab_05/ssl/certificates/server-key.key
+
+# Bỏ qua các file cache, nhật ký lỗi hệ thống
+*.log
+.DS_Store
+Thumbs.db
